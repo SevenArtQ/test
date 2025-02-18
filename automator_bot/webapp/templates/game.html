@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Бот - Профиль</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            background-color: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .profile-card {
+            background: var(--tg-theme-secondary-bg-color);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .stat-item {
+            background: var(--tg-theme-bg-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--tg-theme-button-color);
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .menu-button {
+            background-color: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            margin: 5px 0;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <h2>👤 Профиль пользователя</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">42</div>
+                    <div class="stat-label">Уровень</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">1,234</div>
+                    <div class="stat-label">Опыт</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">15</div>
+                    <div class="stat-label">Достижения</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">Дней активности</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <button class="menu-button" onclick="showProfile()">
+                👤 Мой профиль
+                <span>→</span>
+            </button>
+            <button class="menu-button" onclick="showAchievements()">
+                🏆 Достижения
+                <span>→</span>
+            </button>
+            <button class="menu-button" onclick="showSettings()">
+                ⚙️ Настройки
+                <span>→</span>
+            </button>
+            <button class="menu-button" onclick="showHelp()">
+                ❓ Помощь
+                <span>→</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+
+        function showProfile() {
+            // Показать детальную информацию профиля
+            tg.showAlert('Детальная информация профиля');
+        }
+
+        function showAchievements() {
+            // Показать список достижений
+            tg.showAlert('Список ваших достижений');
+        }
+
+        function showSettings() {
+            // Показать настройки
+            tg.showAlert('Настройки профиля');
+        }
+
+        function showHelp() {
+            // Показать справку
+            tg.showAlert('Справка по использованию бота');
+        }
+    </script>
+</body>
+</html> 
